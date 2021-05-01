@@ -1,4 +1,4 @@
-package String;
+package Math;
 
 import java.io.*;
 
