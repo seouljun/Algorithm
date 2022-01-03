@@ -23,13 +23,13 @@ public class B_1712 {
         int b = Integer.parseInt(st.nextToken());
         int c = Integer.parseInt(st.nextToken());
 
-        if(b > c)
-            bw.write(-1 + "\n");
-        else if(b == c)
-            bw.write(-1 + "\n");
-        else
-            bw.write((a/(c-b)+1)+ "\n");
-
+        if (b > c) {
+            bw.write("-1");
+        } else if (b == c) {
+            bw.write("-1");
+        } else {
+            bw.write(a / (c - b) + 1 + "\n");
+        }
         bw.flush();
         bw.close();
         br.close();

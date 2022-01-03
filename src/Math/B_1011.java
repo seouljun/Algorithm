@@ -12,6 +12,7 @@ import java.util.StringTokenizer;
  * x지점부터 y지점 까지 이동하는 최소 거리를 구하시오
  * <p>
  * 풀이
+ * 실패
  */
 public class B_1011 {
     public static void main(String[] args) throws IOException {
