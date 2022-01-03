@@ -5,6 +5,7 @@ import java.util.StringTokenizer;
 
 /**
  * 주어진 수 N개 중에서 소수가 몇 개 인지 찾아서 출력하는 프로그램을 작성하시오
+ * 제곱근 풀이
  */
 public class B_1978 {
     public static void main(String[] args) throws IOException {
