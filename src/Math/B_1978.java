@@ -11,26 +11,30 @@ public class B_1978 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int count = Integer.parseInt(br.readLine());
-        int count2 = count;
+        int n = Integer.parseInt(br.readLine());
+        int count = 0;
 
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        while(count > 0){
+        while(n > 0){
             int value = Integer.parseInt(st.nextToken());
-            int cnt = 0;
-            for(int i = 1; i <= value; i++){
-                if(value % i == 0 && value != 1){
-                    cnt++;
-                }
-                if(cnt == 3 || value == 1){
-                    count2--;
-                    break;
+            boolean isPrime = true;
+
+            if(value == 1){
+                n--;
+                continue;
+            }
+            for(int i = 2; i <= Math.sqrt(value); i++){
+                if(value % i == 0){
+                    isPrime = false;
                 }
             }
-            count--;
+            if(isPrime)
+                count++;
+
+            n--;
         }
-        bw.write(count2+"\n");
+        bw.write(count+"\n");
         bw.flush();
         bw.close();
         br.close();
