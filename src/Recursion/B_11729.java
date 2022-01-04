@@ -1,7 +1,6 @@
-package recursion;
+package Recursion;
 
 import java.io.*;
-import java.util.Scanner;
 
 public class B_11729 {
     static StringBuilder sb = new StringBuilder();
