@@ -9,16 +9,20 @@ public class B_2750 {
 
         int n = Integer.parseInt(br.readLine());
         int[] arr = new int[n];
-
+        int[] arr2;
         for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(br.readLine());
         }
-
+        arr2 = arr;
 //        selectionSort(arr);
 
         for (int i = 0; i < n; i++) {
 //            bw.write(selectionSort(arr)[i] + "\n");
             bw.write(insertSort(arr)[i] + "\n");
+        }
+        bw.write("===============\n");
+        for (int i = 0; i < n; i++) {
+            bw.write(BubbleSort(arr2)[i] + "\n");
         }
         bw.flush();
         bw.close();
@@ -61,6 +65,19 @@ public class B_2750 {
              * 그러므로 타겟은 j + 1 에 위치하게 된다.
              */
             arr[j + 1] = target;
+        }
+        return arr;
+    }
+    //버블정렬
+    static int[] BubbleSort(int[] arr){
+        for(int i = 0 ; i < arr.length - 1; i++){
+            for(int j = i+1; j < arr.length ; j++){
+                if(arr[i] > arr[j]){
+                    int value = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = value;
+                }
+            }
         }
         return arr;
     }
