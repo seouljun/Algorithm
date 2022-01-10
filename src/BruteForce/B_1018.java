@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.StringTokenizer;
 
 /**
+ * 복습 필요
  * Input1 : M, N
  * Input2 : N개 줄에 보드의 각 행의 상태가 주어짐
  * Output : 지민이가 다시 칠해야 하는 정사각형의 개수

@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 
 /**
+ * 더 좋은 방법이 있을듯 복습
  * Input1 : N 개수
  * Input2 : N개의 정수
  * Output : 산술평균
