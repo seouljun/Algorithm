@@ -1,17 +1,21 @@
 package BackTracking;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
 
 public class B_14889 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static int[][] arr;
     static boolean[] judge;
-    static int startTeam = 0;
-    static int linkTeam = 0;
+    static int min = Integer.MAX_VALUE;
+    static int n;
+
     public static void main(String[] args) throws IOException {
-        int n = Integer.parseInt(br.readLine());
+        n = Integer.parseInt(br.readLine());
         arr = new int[n][n];
         judge = new boolean[n];
         for (int i = 0; i < n; i++) {
@@ -20,26 +24,41 @@ public class B_14889 {
                 arr[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        doFind(n,1, 0,1);
+        doFind(0, 0);
+        bw.write(min + "\n");
+        bw.flush();
+        bw.close();
+        br.close();
     }
 
-    private static void doFind(int num, int count, int x, int y) {
-        if(num == 0){
-
+    private static void doFind(int index, int count) {
+        //가지치기 조건
+        if (count == n / 2) {
+            cal();
             return;
         }
-        if(count % 2 != 0){
-            startTeam++;
-        }else {
-            linkTeam++;
+        for (int i = index; i < n; i++) {
+            judge[i] = true;
+            doFind(i + 1, count + 1);
+            judge[i] = false;
         }
-        for(int i = 0 ; i < num; i++){
-
-        }
-
     }
 
-    private static int cal(int i, int j){
-        return arr[i][j] + arr[j][i];
+    private static void cal() {
+        int startTeam = 0;
+        int linkTeam = 0;
+        for (int i = 0; i < n-1; i++) {
+            for (int j = i+1; j < n; j++) {
+                if (judge[i] && judge[j]) {
+                    startTeam += arr[i][j] + arr[j][i];
+                } else if (!judge[i] && !judge[j]) {
+                    linkTeam += arr[i][j] + arr[j][i];
+                }
+            }
+        }
+        int minus = Math.abs(startTeam-linkTeam);
+        if(minus < min){
+            min = minus;
+        }
     }
 }
