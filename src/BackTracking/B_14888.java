@@ -30,15 +30,18 @@ public class B_14888 {
         for (int i = 0; i < 4; i++) {
             operator[i] = Integer.parseInt(st.nextToken());
         }
-
-        doFunction(numbers[0], 1, Arrays.stream(operator).sum());
+        int start = numbers[0];
+        int end = Arrays.stream(operator).sum();
+        doFunction(start, 1, end);
         bw.write(Collections.max(list) + "\n");
         bw.write(Collections.min(list) + "\n");
         bw.flush();
         bw.close();
         br.close();
     }
-
+    //result 연산의 결과 값
+    //order 다음 연산 할 숫자의 순서
+    //depth 깊이 == 남은 연산자의 수
     private static void doFunction(int result, int order, int depth) {
         if (depth == 0) {
             list.add(result);
