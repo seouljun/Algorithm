@@ -16,6 +16,7 @@ public class Test
         solution("2022.05.19", new String[] { "A 6", "B 12", "C 3" },
             new String[] { "2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C" });
     }
+    //todo change 1month -> 28days
     public static int[] solution(String today, String[] terms, String[] privacies) {
         StringTokenizer st;
 
