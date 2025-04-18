@@ -1,4 +1,4 @@
-package Programmers;
+package programmers;
 import java.util.*;
 
 public class Question_5 {
@@ -16,7 +16,6 @@ public class Question_5 {
                 graph.add(new ArrayList<>());
             }
 
-            // 양방향 간선 추가
             for (int[] e : edge) {
                 graph.get(e[0]).add(e[1]);
                 graph.get(e[1]).add(e[0]);
